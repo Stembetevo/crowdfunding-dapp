@@ -49,10 +49,10 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
-                      <a>
+                      
                       <item.icon />
                       <span>{item.name}</span>
-                    </a>
+                    
                     </Link>
                     
                   </SidebarMenuButton>
