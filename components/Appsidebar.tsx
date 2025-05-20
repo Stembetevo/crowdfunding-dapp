@@ -16,7 +16,7 @@ import Link from "next/link"
 const items = [
   {
     name: 'Dashboard',
-    url: 'dashboard',
+    url: '/',
     icon: LayoutDashboard,
   },
   {
