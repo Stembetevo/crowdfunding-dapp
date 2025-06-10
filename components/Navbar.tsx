@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Logo/Brand */}
         <div className="flex items-center">
           <Link href="/" className="text-xl font-bold">
-            CrowdFund
+            Peana
           </Link>
         </div>
         

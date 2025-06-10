@@ -2,11 +2,16 @@
 import React, { useState } from 'react'
 import FormField from '../components/FormField';
 import CustomButton from '../components/CustomButton';
+import { useCampaigns } from '../context/CampaignsContext';
+import { useRouter } from 'next/navigation';
+import { Campaign } from '../types/Campaign';
 
 export default function CreateCampaign(){
-  
+   const {addCampaign} = useCampaigns();
+   const router = useRouter();
+
     const [isLoading,setIsLoading] = useState(false);
-    const [form,setForm] = useState({
+    const [form,setForm] = useState<Campaign>({
         name:'',
         title:'',
         description:'',
@@ -21,8 +26,13 @@ export default function CreateCampaign(){
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
       e.preventDefault();
-      console.log(form)
-    }
+      addCampaign(form);
+      setIsLoading(true);
+      setTimeout(() => {
+         setIsLoading(false);
+         router.push('/');
+      },500);
+     }
 
   return (
     <div className='bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4'>{isLoading && 'Loader...'}

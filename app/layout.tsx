@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/Appsidebar";
 import WalletProviderWrapper from "@/components/SuiWalletProvider";
+import { CampaignsProvider } from "./context/CampaignsContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,9 @@ export default function RootLayout({
               <AppSidebar />
               <div className="flex-1 flex flex-col">
                 <SidebarTrigger className="absolute top-4 left-4 z-20 md:hidden" />
-                {children}
+                <CampaignsProvider>
+                  {children}
+                </CampaignsProvider>
               </div>
             </div>
           </SidebarProvider>

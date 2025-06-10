@@ -42,7 +42,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Crowdfunding App</SidebarGroupLabel>
+          <SidebarGroupLabel>Peana</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
