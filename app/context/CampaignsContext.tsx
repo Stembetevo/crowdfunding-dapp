@@ -6,6 +6,7 @@ import { Campaign } from '../types/Campaign';
 interface CampaignsContextType {
   campaigns: Campaign[];
   addCampaign: (campaign: Campaign) => void;
+  
 }
 
 

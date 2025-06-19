@@ -5,6 +5,7 @@ interface CustomButtonProps {
     title: string;
     handleClick?: React.MouseEventHandler<HTMLButtonElement>;
     styles?: string;
+    disabled?:boolean;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({ btnType = "button", title, handleClick, styles }) => {

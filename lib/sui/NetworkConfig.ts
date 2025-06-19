@@ -1,5 +1,5 @@
 import { getFullnodeUrl } from "@mysten/sui/client";
-import {TESTNET_COUNTER_PACKAGE_ID} from "./constants/constants";
+import {PACKAGE_ID} from "@/constants/constant";
 
 import { createNetworkConfig } from "@mysten/dapp-kit";
 
@@ -8,7 +8,7 @@ const { useNetworkVariable } =
     testnet: {
       url: getFullnodeUrl("testnet"),
       variables: {
-        counterPackageId: TESTNET_COUNTER_PACKAGE_ID,
+        campaignPackageId: PACKAGE_ID,
       },
     },
     

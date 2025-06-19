@@ -2,6 +2,7 @@
 import React from 'react';
 import { useCampaigns } from '@/app/context/CampaignsContext';
 import { Campaign } from '@/app/types/Campaign';
+import Link from 'next/link';
 
 export default function Campaigns() {
   const { campaigns } = useCampaigns();
@@ -14,13 +15,15 @@ export default function Campaigns() {
           <div className="text-white">No campaigns yet. Create one!</div>
         )}
         {campaigns.map((item: Campaign, index: number) => (
-          <div key={index} className="bg-[#23232b] rounded-lg p-4 shadow">
-            <img src={item.image} alt={item.title} className="w-full h-40 object-cover rounded mb-3" />
-            <h2 className="text-lg font-bold text-white">{item.title}</h2>
-            <p className="text-[#b0b0b0]">{item.description}</p>
-            <div className="mt-2 text-sm text-[#1dc071]">Goal: {item.target}</div>
-            <div className="text-xs text-[#b0b0b0]">By {item.name} | Ends: {item.deadline}</div>
-          </div>
+          <Link key={index} href={`/campaigns/${item.id}`}>
+            <div className="bg-[#23232b] rounded-lg p-4 shadow cursor-pointer hover:shadow-lg transition">
+              <img src={item.image} alt={item.title} className="w-full h-40 object-cover rounded mb-3" />
+              <h2 className="text-lg font-bold text-white">{item.title}</h2>
+              <p className="text-[#b0b0b0]">{item.description}</p>
+              <div className="mt-2 text-sm text-[#1dc071]">Goal: {item.target}</div>
+              <div className="text-xs text-[#b0b0b0]">By {item.name} | Ends: {item.deadline}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
